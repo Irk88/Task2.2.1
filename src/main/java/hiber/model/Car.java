@@ -62,11 +62,11 @@ public class Car {
         if (this == o) return true;
         if (!(o instanceof Car)) return false;
         Car car = (Car) o;
-        return getSeries() == car.getSeries() && getId().equals(car.getId()) && getModel().equals(car.getModel());
+        return getSeries() == car.getSeries() && Objects.equals(getModel(), car.getModel());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getModel(), getSeries());
+        return Objects.hash(getModel(), getSeries());
     }
 }
